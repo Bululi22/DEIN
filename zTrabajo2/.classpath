@@ -12,47 +12,47 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/Librerias componentes y acceso a mysql/bbdd/mysql-connector-java-8.0.19.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/Librerias componentes y acceso a mysql/bbdd/mysql-connector-java-8.0.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/javafx/javafx.base.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/javafx/javafx.base.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/javafx/javafx.controls.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/javafx/javafx.controls.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/javafx/javafx.fxml.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/javafx/javafx.fxml.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/javafx/javafx.graphics.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/javafx/javafx.graphics.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/javafx/javafx.media.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/javafx/javafx.media.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/javafx/javafx.swing.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/javafx/javafx.swing.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/javafx/javafx.web.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/javafx/javafx.web.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN/Librerias/javafx/javafx-swt.jar">
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/javafx/javafx-swt.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
