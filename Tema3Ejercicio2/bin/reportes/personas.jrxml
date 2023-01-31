@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="personas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="16bf94ee-d013-4000-ae0b-94e4ea3604be">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Agenda"/>
+	<queryString language="SQL">
+		<![CDATA[select * from persona
+]]>
+	</queryString>
+	<field name="dni" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="apellido1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido1"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="apellido2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido2"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="edad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="edad"/>
+		<property name="com.jaspersoft.studio.field.label" value="edad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

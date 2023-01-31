@@ -1,0 +1,24 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property 
+-fx-background-color: "C3A17D"
+-fx-background-image: url("/home/dm2/Escritorio/fondo.jpg");
+ * 
+ * */
+* {
+	-fx-font-family: "Gayathri Bold";
+
+}
+
+
+#gridSeleccion{
+	-fx-background-color: "DAC2A8"
+}
+
+#gridSeleccion Button{
+	-fx-background-radius: 50px;
+	-fx-font-size: 20px;
+	-fx-font-weight: Bold  
+}
+
+#gridTabla{
+	-fx-background-color: "DAC2A8"
+}
