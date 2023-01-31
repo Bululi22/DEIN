@@ -1,0 +1,18 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#tablaPersona{
+    -fx-background-color: #FFC0CB;
+
+}
+
+#btnModificar{
+	-fx-background-color: #C5528D;
+	-fx-text-fill: white;
+}
+#btnAnadir{
+	-fx-background-color: #C5528D;
+	-fx-text-fill: white;
+}
+#btnEliminar{
+	-fx-background-color: #C5528D;
+	-fx-text-fill: white;
+}

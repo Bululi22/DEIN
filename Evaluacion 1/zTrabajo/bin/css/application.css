@@ -1,0 +1,15 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+* {
+	-fx-font-family: "Gayathri Bold";
+
+}
+button {
+	-fx-font-family: "25 Gayathri Bold";
+}
+
+GridPane{
+	-fx-background-color: "92BDB4"
+}
+#gridTabla{
+	-fx-background-color: "A9E4D7"
+}
