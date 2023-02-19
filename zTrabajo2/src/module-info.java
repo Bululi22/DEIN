@@ -8,6 +8,7 @@ module Tanda1L {
 	requires javafx.graphics;
 	requires javafx.base;
 	requires java.sql;
+	requires jasperreports;
 	
 	opens application to javafx.graphics, javafx.fxml;
 	opens controller to javafx.graphics, javafx.fxml;

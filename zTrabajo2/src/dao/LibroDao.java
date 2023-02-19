@@ -61,7 +61,7 @@ public class LibroDao {
 		try {
 			conexion = new ConexionBD();
 			PreparedStatement ps;
-	
+			
 			sql = "INSERT INTO Libro VALUES (?,?,?,?,?,?)";
 			ps = conexion.getConexion().prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 			ps.setString(1, null);
@@ -69,7 +69,7 @@ public class LibroDao {
 			ps.setString(3, l.getAutor());
 			ps.setString(4, l.getEditorial());
 			ps.setString(5, l.getEstado());
-			ps.setString(6, l.getBaja());
+			ps.setInt(6, l.getBaja());
 			ps.executeUpdate();
 	
 			ps.close();
@@ -95,7 +95,7 @@ public class LibroDao {
 			ps.setString(2, l.getAutor());
 			ps.setString(3, l.getEditorial());
 			ps.setString(4, l.getEstado());
-			ps.setString(5, l.getBaja());
+			ps.setInt(5, l.getBaja());
 			ps.setInt(6, l.getCodigo());
 			ps.executeUpdate();
 

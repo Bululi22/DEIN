@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+/**
+ * @author dm2
+ *
+ */
+module ExamenAlaynEva2 {
+		requires javafx.controls;
+		requires java.desktop;
+		requires javafx.web;
+		requires javafx.fxml;
+		requires javafx.swing;
+		requires javafx.media;
+		requires javafx.graphics;
+		requires javafx.base;
+		requires java.sql;
+		requires org.kordamp.ikonli.javafx;
+		requires jasperreports;
+		
+		opens application to javafx.graphics, javafx.fxml;
+		opens controllers to javafx.graphics, javafx.fxml;
+		opens util to java.sql;
+		opens model to javafx.graphics, javafx.fxml,javafx.base;
+		opens dao to javafx.base;
+		
+	
+}

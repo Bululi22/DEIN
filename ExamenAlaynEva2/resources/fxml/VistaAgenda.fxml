@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="431.0" prefWidth="715.0" style="-fx-background-color: #D6D6D6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControladorVentanaPrincipal">
+  <columnConstraints>
+    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="173.0" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="367.0" minWidth="10.0" prefWidth="243.0" />
+    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="252.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+    <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="184.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <MenuBar prefHeight="27.0" prefWidth="696.0" GridPane.columnSpan="3">
+        <menus>
+          <Menu mnemonicParsing="false" text="Informes">
+            <items>
+              <MenuItem fx:id="miInforme1" mnemonicParsing="false" onAction="#abrirInforme1" text="Informe 1" />
+                  <MenuItem fx:id="miInforme2" mnemonicParsing="false" text="Infrome 2" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+              <items>
+                <MenuItem fx:id="miAyuda" mnemonicParsing="false" onAction="#abrirMiAyuda" text="Ayuda" />
+                  <MenuItem fx:id="miAyudaOnline" mnemonicParsing="false" onAction="#abrirAyudaOnline" text="Ayuda online" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="lblTitulo" alignment="CENTER" minWidth="-Infinity" prefHeight="25.0" prefWidth="643.0" text="FECHANACDNI - NOMBRE Y APELLIDOS ()" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label alignment="CENTER" text="TELÉFONOS" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="15.0" />
+         </GridPane.margin></Label>
+      <Label alignment="CENTER" text="EMAILS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <GridPane.margin>
+            <Insets right="15.0" />
+         </GridPane.margin></Label>
+      <ListView fx:id="listViewTelefonos" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets left="15.0" />
+         </GridPane.margin></ListView>
+      <ListView fx:id="listViewEmails" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets right="15.0" />
+         </GridPane.margin></ListView>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <children>
+            <Button fx:id="btnTlfNuevo" mnemonicParsing="false" onAction="#crearTelefono" text="Nuevo">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnTlfBorrar" disable="true" mnemonicParsing="false" onAction="#borrarTelefono" text="Borrar">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <GridPane.margin>
+            <Insets left="15.0" />
+         </GridPane.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="btnEmailNuevo" mnemonicParsing="false" onAction="#crearEmail" text="Nuevo">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnEmailBorrar" disable="true" mnemonicParsing="false" onAction="#borrarEmail" text="Borrar">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <GridPane.margin>
+            <Insets right="15.0" />
+         </GridPane.margin>
+      </HBox>
+      <Button fx:id="btnPersonaAnterior" mnemonicParsing="false" onAction="#personaAnterior" text="Anterior" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="15.0" />
+         </GridPane.margin></Button>
+      <Button fx:id="btnPersonaSiguiente" mnemonicParsing="false" onAction="#personaSiguiente" text="Siguiente" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets right="15.0" />
+         </GridPane.margin></Button>
+      <Label fx:id="labelPosicion" text="3/11" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" />
+   </padding>
+</GridPane>

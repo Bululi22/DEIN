@@ -7,17 +7,22 @@ import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Deportista;
-import model.Equipo;
-import model.Evento;
-import model.Libro;
-import model.Participacion;
 
+import model.Libro;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
+import java.io.FileNotFoundException;
 import java.net.URL;
+import java.sql.Connection;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
+import conexionBD.ConexionBD;
 import dao.LibroDao;
-import dao.ParticipacionDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -40,8 +45,9 @@ public class VenLibrosController implements Initializable{
 	@FXML
 	private Button btnEjecuta;
 	private ObservableList<String> estados = FXCollections.observableArrayList();
-	private Libro libro;
+	private Libro libro, li;
 	private LibroDao dao;
+	private Boolean editar = false;
 
 	// Event Listener on Button[#btnEjecuta].onAction
 	@FXML
@@ -57,17 +63,10 @@ public class VenLibrosController implements Initializable{
 				
 				if(!editar) {
 					//Crear
-					msg = parDao.crearParticipacion(pa);
+					msg = dao.crearLibro(libro);
 				}else {
 					//Editar
-					String id_deportista, id_evento;
-					System.out.println("3");
-					id_deportista = p.getDeportista().getId_deportista();
-					System.out.println("4");
-					id_evento = p.getEvento().getId_evento();
-					System.out.println("5");
-					msg = parDao.editarParticipacion(pa, id_deportista, id_evento);
-					System.out.println("6");
+					msg = dao.editarLibro(libro);
 				}
 			}
 			if(msg.equals("")) {
@@ -78,8 +77,10 @@ public class VenLibrosController implements Initializable{
 		        	alert.setContentText("Editado correctamente \n");
 		        }else {
 		        	alert.setContentText("Creado correctamente \n");
+		        	aceptar(event);
 		        }
 		        alert.showAndWait();
+		        
 		        this.cerrar(event);
 			}else {
 				Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -106,8 +107,20 @@ public class VenLibrosController implements Initializable{
 	}
 	
 	public void cargarDatos(Libro li) {
-		// TODO Auto-generated method stub
-		
+		this.li=li;
+		editar = true;
+		lblTexto.setText("EDITAR");	
+		tfTitulo.setText(li.getTitulo());
+		tfAutor.setText(li.getAutor());
+		tfEditorial.setText(li.getEditorial());
+		if (li.getEstado().equals("Usado nuevo"))
+			cbEstado.getSelectionModel().select(1);
+		else if (li.getEstado().equals("Usado seminuevo"))
+			cbEstado.getSelectionModel().select(2);
+		else if (li.getEstado().equals("Usado estropeado"))
+			cbEstado.getSelectionModel().select(3);
+		else if (li.getEstado().equals("Usado Restaurado"))
+			cbEstado.getSelectionModel().select(4);
 	}
 	
 	public String validacion() {
@@ -116,7 +129,13 @@ public class VenLibrosController implements Initializable{
 		String autor = tfAutor.getText().toString();
 		String editorial = tfEditorial.getText().toString();
 		String estado = cbEstado.getSelectionModel().getSelectedItem();
-		libro = new Libro(0, titulo, autor, editorial, estado, 0);
+		int id = 0;
+		int baja = 0;
+		if (editar) {
+			id = li.getCodigo();
+			baja = li.getBaja();
+		}
+		libro = new Libro(id, titulo, autor, editorial, estado, baja);
 		return msg;
 	}
 	
@@ -127,4 +146,27 @@ public class VenLibrosController implements Initializable{
 		cbEstado.setItems(estados);
 		cbEstado.getSelectionModel().select(0);
 	}
+	
+	public void aceptar(ActionEvent event) throws FileNotFoundException {
+	    try {
+	    	ConexionBD conexion = new ConexionBD();
+			Connection con = conexion.getConexion();
+	        HashMap<String, Object> parameters = new HashMap<String, Object>();
+	        parameters.put("codigo", 5);
+	        parameters.put("nombre", "xxxx");
+	        JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/reports/Informe1.jasper"));
+	        JasperPrint jprint = JasperFillManager.fillReport(report, null, con);
+	        JasperViewer viewer = new JasperViewer(jprint, false);
+	        viewer.setVisible(true);
+	    } catch (Exception e) {
+	        Alert alert = new Alert(Alert.AlertType.ERROR);
+	        alert.setHeaderText(null);
+	        alert.initOwner(this.btnEjecuta.getScene().getWindow());
+	        alert.setTitle("ERROR");
+	        alert.setContentText("Ha ocurrido un error");
+	        alert.showAndWait();
+	        e.printStackTrace();
+	    }
+	}
+	
 }

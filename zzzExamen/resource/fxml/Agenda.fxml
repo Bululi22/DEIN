@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="gridTabla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="998.0" style="-fx-background-color: #D6D6D6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgendaController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="369.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="369.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="245.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="153.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <MenuBar GridPane.columnSpan="3">
+        <menus>
+          <Menu mnemonicParsing="false" text="Informes">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#informe1" text="Informe 1" />
+                  <MenuItem mnemonicParsing="false" onAction="#informe2" text="Informe 2" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ayuda1" text="Ayuda" />
+                  <MenuItem mnemonicParsing="false" onAction="#ayudaOnline" text="Ayuda Online" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="lblTitulo" text="NomUsuario" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <ListView fx:id="lvTelefonos" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </ListView>
+      <ListView fx:id="lvEmails" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="20.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label text="TELEFONOS" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="EMAILS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <GridPane.margin>
+            <Insets right="20.0" />
+         </GridPane.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="60.0" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+         <children>
+            <Button fx:id="btnNuevoTelefono" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nuevoTelefono" style="-fx-background-color: #489CC4;" text="Nuevo" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnBorrarTelefono" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#borrarTelefono" style="-fx-background-color: #489CC4;" text="Borrar" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="btnAnterior" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#usuarioAnterior" style="-fx-background-color: #489CC4;" text="Anterior" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="60.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="btnNuevoEmail" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nuevoEmail" style="-fx-background-color: #489CC4;" text="Nuevo" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnBorrarEmail" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#borrarEmail" style="-fx-background-color: #489CC4;" text="Borrar" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="btnSiguiente" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#usuarioSiguiente" style="-fx-background-color: #489CC4;" text="Siguiente" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblNumUsuarios" text="NumUsuarios" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</GridPane>

@@ -1,8 +1,8 @@
 package model;
 
 public class Libro {
-	private int codigo;
-	private String titulo, autor, editorial, estado, baja;
+	private int codigo, baja;
+	private String titulo, autor, editorial, estado;
 	
 	public Libro(int codigo, String titulo, String autor, String editorial, String estado, int baja) {
 		this.codigo = codigo;
@@ -10,11 +10,9 @@ public class Libro {
 		this.autor = autor;
 		this.editorial = editorial;
 		this.estado = estado;
-		if (baja == 0) {
-			this.baja = "Disponible";
-		}else {
-			this.baja = "Baja";
-		}
+
+//		BAJA = 0   /     ALTA = 1
+		this.baja = baja;
 	}
 
 	public int getCodigo() {
@@ -57,11 +55,11 @@ public class Libro {
 		this.estado = estado;
 	}
 
-	public String getBaja() {
+	public int getBaja() {
 		return baja;
 	}
 
-	public void setBaja(String baja) {
+	public void setBaja(int baja) {
 		this.baja = baja;
 	}
 
