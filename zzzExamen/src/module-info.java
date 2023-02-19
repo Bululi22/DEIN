@@ -9,6 +9,7 @@ module zzzExamen {
 	requires javafx.base;
 	requires java.sql;
 	requires jasperreports;
+	requires jPDFViewerFX;
 	
 	opens application to javafx.graphics, javafx.fxml;
 	opens controller to javafx.graphics, javafx.fxml;

@@ -10,6 +10,10 @@ public class Telefono {
 		this.telefono = telefono;
 		this.dni = dni;
 	}
+	public Telefono(String dni, int telefono) {
+		this.telefono = telefono;
+		this.dni = dni;
+	}
 
 	public int getId() {
 		return id;
@@ -35,7 +39,10 @@ public class Telefono {
 		this.dni = dni;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return telefono+"";
+	}
 	
 	
 }

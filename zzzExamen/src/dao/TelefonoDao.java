@@ -60,17 +60,16 @@ public class TelefonoDao {
 		return msg;
 	}
 	
-	public void borrarEmail(String telefono) throws Exception {
+	public void borrarTelefono(Telefono telefono) throws Exception {
 		String sql;
 
 		conexion = new ConexionBD();
-		@SuppressWarnings("unused")
-		Connection con = conexion.getConexion();
 		PreparedStatement ps;
 
-		sql = "DELETE FROM telefono WHERE (telefono = ?');";
+		sql = "DELETE FROM telefono WHERE (dni = ?) AND (telefono = ?);";
 		ps = conexion.getConexion().prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-		ps.setString(1, telefono);
+		ps.setString(1, telefono.getDni());
+		ps.setInt(2, telefono.getTelefono());
 		ps.executeUpdate();
 
 		ps.close();

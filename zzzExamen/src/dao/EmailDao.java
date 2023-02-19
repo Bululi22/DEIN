@@ -60,17 +60,15 @@ public class EmailDao {
 		return msg;
 	}
 	
-	public void borrarEmail(String email) throws Exception {
+	public void borrarEmail(Email email) throws Exception {
 		String sql;
 
 		conexion = new ConexionBD();
-		@SuppressWarnings("unused")
-		Connection con = conexion.getConexion();
 		PreparedStatement ps;
-
-		sql = "DELETE FROM email WHERE (email = ?');";
+		sql = "DELETE FROM email WHERE (dni = ?) AND (email = ?);";
 		ps = conexion.getConexion().prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-		ps.setString(1, email);
+		ps.setString(1, email.getDni());
+		ps.setString(2, email.getEmail());
 		ps.executeUpdate();
 
 		ps.close();

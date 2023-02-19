@@ -147,5 +147,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/dm2/Escritorio/DEIN2/DEIN2/Librerias/Librerias componentes y acceso a mysql/jasperreports/otros/jPDFViewerFX.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

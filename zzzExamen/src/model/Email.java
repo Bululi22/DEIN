@@ -10,6 +10,11 @@ public class Email {
 		this.email = email;
 	}
 	
+	public Email(String dni, String email) {
+		this.dni = dni;
+		this.email = email;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -28,4 +33,10 @@ public class Email {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return email;
+	}
+	
 }
